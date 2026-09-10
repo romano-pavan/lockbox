@@ -1,0 +1,14 @@
+[Unit]
+Description=Immutable offsite database backup to Amazon S3
+Documentation=https://github.com/romano-pavan/lockbox
+After=network-online.target mariadb.service mysql.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/lockbox backup
+# Keep the dump from competing with the database for disk and processor time.
+Nice=10
+IOSchedulingClass=idle
+# Any non-zero exit status marks the unit failed, which is what the
+# OnFailure hook and any monitoring you add will react to.

@@ -1,0 +1,23 @@
+[Unit]
+Description=Immutable database backup to Amazon S3
+Documentation=https://github.com/romano-pavan/lockbox
+
+[Timer]
+# Once a night. lockbox holds no state between runs, so schedule it as often
+# as your tolerance for lost data requires. Other examples:
+#
+#   OnCalendar=02:30,14:30          twice a day
+#   OnCalendar=*-*-* 0/4:00:00      every four hours
+#   OnCalendar=Mon..Fri 19:00       weekday evenings only
+#
+# Each run is a full dump and a separate locked object, so the storage bill is
+# roughly runs per day x retention days x compressed size. If you raise the
+# frequency, pass a matching --max-age to 'lockbox doctor' so a missed run is
+# noticed sooner than the default twenty six hours.
+OnCalendar=*-*-* 02:30:00
+RandomizedDelaySec=10m
+# Run at the next opportunity if the machine was off at the scheduled time.
+Persistent=true
+
+[Install]
+WantedBy=timers.target

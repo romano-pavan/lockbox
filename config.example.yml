@@ -1,0 +1,25 @@
+# lockbox configuration
+#
+# 'lockbox init' writes this file for you. Edit it by hand only if something
+# changes later.
+#
+# Amazon Web Services access keys are NOT stored here. lockbox reads them from
+# /etc/lockbox/credentials, from ~/.aws/credentials, or from the
+# AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables.
+
+database:
+  type: mariadb        # mariadb or mysql
+  host: localhost      # a local host means socket authentication, no password
+  port: 3306
+  name: erp            # leave empty to dump every database
+  defaults_file:       # optional my.cnf style file, only needed for a remote database
+
+storage:
+  bucket: adria-trade-erp-backup-2026
+  region: eu-central-1
+  prefix: lockbox      # folder inside the bucket
+  endpoint:            # leave empty for Amazon S3, set for S3 compatible storage
+
+retention:
+  days: 30
+  mode: GOVERNANCE     # GOVERNANCE while testing, COMPLIANCE in production

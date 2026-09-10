@@ -1,0 +1,7 @@
+/lockbox
+/lockbox.exe
+/dist/
+*.sql
+*.sql.gz
+config.yml
+credentials

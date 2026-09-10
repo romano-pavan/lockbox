@@ -1,7 +1,8 @@
 # lockbox
+[![CI](https://github.com/romano-pavan/lockbox/actions/workflows/ci.yml/badge.svg)](https://github.com/romano-pavan/lockbox/actions/workflows/ci.yml)
 
 Immutable offsite backups of a MySQL or MariaDB database on Amazon S3, in one command.
-[![CI](https://github.com/romano-pavan/lockbox/actions/workflows/ci.yml/badge.svg)](https://github.com/romano-pavan/lockbox/actions/workflows/ci.yml)
+
 
 
 ## In short

@@ -1,6 +1,8 @@
 # lockbox
 
 Immutable offsite backups of a MySQL or MariaDB database on Amazon S3, in one command.
+[![CI](https://github.com/romano-pavan/lockbox/actions/workflows/ci.yml/badge.svg)](https://github.com/romano-pavan/lockbox/actions/workflows/ci.yml)
+
 
 > **Hrvatski.** Alat koji radi kopiju baze podataka i šalje je u Amazonov oblak tako da je poslije **nitko ne može obrisati ni promijeniti**, ni ti sam. To je zaštita od ransomwarea: ako netko provali na server i sve enkriptira, kopija u oblaku ostaje netaknuta jer je server fizički nema pravo dirati.
 >
